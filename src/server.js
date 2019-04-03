@@ -10,12 +10,14 @@ setupMiddleware(app);
 
 const database = connect();
 
-// force: true will drop the table if it already exists
-database.sequelize.sync({force: true}).then(() => {
+// {force: true} force: true will drop the table if it already exists
+database.sequelize.sync().then(() => {
     console.log('Drop and Resync with { force: false }');
 });
 
 app.use('/api', restRouter);
+
+app.use(express.static(__dirname + '/public'));
 
 //catch all
 app.all('*', (req, res) =>  {
