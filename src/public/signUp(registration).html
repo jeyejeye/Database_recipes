@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reg_autho.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="registration">
+        <div id="regForm">
+            <h1>Sing up</h1>
+
+            <label for="name">Login</label>
+            <input type="text" class="input-ls" required id="name">
+
+            <label for="mail">Email</label>
+            <input type="email" class="input-ls" required id="mail" name="mail" >
+            
+            <label for="password">Password</label>
+            <input type="password" class="input-ls" name="password" required id="password">
+
+            <label for="password2">Repeat your password</label>
+            <input type="password" class="input-ls" name="password2" required id="password2">
+
+            <div id="idDivError" class="error"></div>
+            <button class="btn" id = "SignUp">Sign up</button>
+
+
+        </div>
+    </div>
+<!--    <script src="../src/backEnd.js"></script>-->
+<!--    <script src="../src/user.js"></script>-->
+    <script src="js/validationSignUpForm.js"></script>
+</body>
+</html>
