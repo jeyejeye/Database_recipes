@@ -1,4 +1,4 @@
-import Recipe from './recipe.model';
+import Step from './step.model';
 
 const getAll = model => (req, res) => {
     return model.findAll({})
@@ -6,10 +6,10 @@ const getAll = model => (req, res) => {
         .catch(error => res.status(500).json(error))
 };
 
-const getByUser = model => (req, res, userId) => {
+const getByRecipe = model => (req, res, recipeId) => {
     return model.findAll({
         where: {
-            user_id: userId
+            recipe_id: recipeId
         }
     })
         .then(entities => res.status(200).json(entities))
@@ -60,11 +60,11 @@ export const findByParam = model => (req, res, next, id) => {
 
 
 export default {
-    getAll: getAll(Recipe),
-    createOne: createOne(Recipe),
+    getAll: getAll(Step),
+    createOne: createOne(Step),
     getOne: getOne(),
-    findByParam: findByParam(Recipe),
-    deleteOne: deleteOne(Recipe),
-    updateOne: updateOne(Recipe),
-    getByUser: getByUser(Recipe)
+    findByParam: findByParam(Step),
+    deleteOne: deleteOne(Step),
+    updateOne: updateOne(Step),
+    getByRecipe: getByRecipe(Step)
 }

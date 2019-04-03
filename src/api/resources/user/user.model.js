@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import { connect } from '../../../db';
+import Recipe from '../recipe/recipe.model';
 
 const schema = {
     name: Sequelize.STRING,
@@ -14,5 +15,5 @@ const User = connect().sequelize.define('user', schema, {
     underscored: true,
     freezeTableName: true,
 });
-
+User.hasMany(Recipe);
 export default User;
