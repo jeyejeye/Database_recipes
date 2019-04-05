@@ -17,5 +17,5 @@ recipeRouter.route('/:id')
     .get(controller.getOne);
 
 
-recipeRouter.route('/userid/:userId')
+recipeRouter.route('/user_id/:userId')
     .get(controller.getByUser);

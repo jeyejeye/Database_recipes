@@ -32,7 +32,7 @@ database.sequelize.sync().then(function () {
 app.use('/api', __WEBPACK_IMPORTED_MODULE_1__api__["a" /* restRouter */]);
 
 app.get('/', function (req, res) {
-    res.redirect('/index.html');
+    res.redirect('/authorization.html');
 });
 
 app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static(__dirname + '/public'));
@@ -52,4 +52,4 @@ app.listen(__WEBPACK_IMPORTED_MODULE_3__config__["a" /* default */].port, functi
 /***/ })
 
 };
-//# sourceMappingURL=0.3cb712a5aa2429c1d5b5.hot-update.js.map
+//# sourceMappingURL=0.23da9d1cbd154c57e90c.hot-update.js.map

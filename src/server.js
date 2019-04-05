@@ -17,6 +17,10 @@ database.sequelize.sync().then(() => {
 
 app.use('/api', restRouter);
 
+app.get('/', function (req, res) {
+    res.redirect('/authorization.html');
+});
+
 app.use(express.static(__dirname + '/public'));
 
 //catch all

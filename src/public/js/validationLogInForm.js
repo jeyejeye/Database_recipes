@@ -1,5 +1,5 @@
 const nameEl = document.getElementById('name');
-const passEl = document.getElementById('password');
+const passEl = document.getElementById('token');
 const btnSingIn = document.getElementById('signIn');
 const error = document.getElementById('idDivError');
 
@@ -11,13 +11,39 @@ function submitListener(event) {
     const name = nameEl.value;
     const loginNotEmpty = name.trim() !== '';
 
-    const pass = passEl.value;
-    const passNotEmpty = pass.trim() !== '';
+    const token = passEl.value;
+    const passNotEmpty = token.trim() !== '';
 
     if (loginNotEmpty && passNotEmpty) {
-        const user = new User;
-        user.logIn({username: name, password: pass});
-        return true;
+        const promice = new Promise(function (resolve, reject) {
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    console.log(this.responseText);
+                    const arrUser = JSON.parse(this.responseText);
+
+                    for (let i = 0; i < arrUser.length; i++) {
+                        if (arrUser[i].name === name && arrUser[i].token === token) {
+                            resolve();
+                            break;
+                        }
+                    }
+                    reject();
+                }
+            });
+
+            xhr.open("GET", "/api/user/");
+            xhr.setRequestHeader("cache-control", "no-cache");
+            xhr.setRequestHeader("Postman-Token", "b8388a49-8f92-49e4-a63a-69a627a7137c");
+
+            xhr.send();
+        });
+
+        promice
+            .then(() => {return true})
+            .catch(() => {return false});
     } else {
         if (!loginNotEmpty) {
             error.innerHTML = 'Ошибка. Поле Логин не заполнено';

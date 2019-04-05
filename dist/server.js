@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "58a951542e299a130b5d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a0c6ee07229402081981"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -853,6 +853,9 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__("babel-runtime/core-js/promise");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__recipe_model__ = __webpack_require__("./src/api/resources/recipe/recipe.model.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_merge__ = __webpack_require__("lodash.merge");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_merge__);
+
 
 
 
@@ -914,7 +917,7 @@ var deleteOne = function deleteOne() {
 var updateOne = function updateOne() {
     return function (req, res, next) {
         var update = req.body;
-        merge(req.docFromId, update);
+        __WEBPACK_IMPORTED_MODULE_2_lodash_merge___default()(req.docFromId, update);
         return req.docFromId.save().then(function (entity) {
             return res.status(201).json(entity);
         }).catch(function (error) {
@@ -1000,7 +1003,7 @@ recipeRouter.route('/').get(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a"
 
 recipeRouter.route('/:id').put(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a" /* default */].updateOne).delete(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a" /* default */].deleteOne).get(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a" /* default */].getOne);
 
-recipeRouter.route('/userid/:userId').get(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a" /* default */].getByUser);
+recipeRouter.route('/user_id/:userId').get(__WEBPACK_IMPORTED_MODULE_1__recipe_controller__["a" /* default */].getByUser);
 
 /***/ }),
 
@@ -1022,6 +1025,9 @@ recipeRouter.route('/userid/:userId').get(__WEBPACK_IMPORTED_MODULE_1__recipe_co
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__ = __webpack_require__("babel-runtime/core-js/promise");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_promise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__step_model__ = __webpack_require__("./src/api/resources/step/step.model.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_merge__ = __webpack_require__("lodash.merge");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_merge__);
+
 
 
 
@@ -1083,7 +1089,7 @@ var deleteOne = function deleteOne() {
 var updateOne = function updateOne() {
     return function (req, res, next) {
         var update = req.body;
-        merge(req.docFromId, update);
+        __WEBPACK_IMPORTED_MODULE_2_lodash_merge___default()(req.docFromId, update);
         return req.docFromId.save().then(function (entity) {
             return res.status(201).json(entity);
         }).catch(function (error) {
@@ -1352,8 +1358,8 @@ var baseConfig = {
     port: 3000,
     db: {
         database: 'kitchen',
-        username: 'postgres',
-        password: '123',
+        username: 'home',
+        password: 'gdvvz71',
         host: 'localhost',
         dialect: 'postgres',
         port: 5432,
@@ -1473,6 +1479,10 @@ database.sequelize.sync().then(function () {
 });
 
 app.use('/api', __WEBPACK_IMPORTED_MODULE_1__api__["a" /* restRouter */]);
+
+app.get('/', function (req, res) {
+    res.redirect('/authorization.html');
+});
 
 app.use(__WEBPACK_IMPORTED_MODULE_0_express___default.a.static(__dirname + '/public'));
 

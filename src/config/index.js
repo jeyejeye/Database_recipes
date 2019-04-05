@@ -2,8 +2,8 @@ const baseConfig = {
     port: 3000,
     db: {
         database: 'kitchen',
-        username: 'postgres',
-        password: '123',
+        username: 'home',
+        password: 'gdvvz71',
         host: 'localhost',
         dialect: 'postgres',
         port: 5432,

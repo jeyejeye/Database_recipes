@@ -1,4 +1,5 @@
 import Step from './step.model';
+import merge from 'lodash.merge';
 
 const getAll = model => (req, res) => {
     return model.findAll({})
