@@ -7,7 +7,7 @@ const getAll = model => (req, res) => {
         .catch(error => res.status(500).json(error))
 };
 
-const getByRecipe = model => (req, res, recipeId) => {
+const getByRecipe = model => (req, res, next, recipeId) => {
     return model.findAll({
         where: {
             recipe_id: recipeId

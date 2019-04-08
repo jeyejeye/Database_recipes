@@ -7,10 +7,10 @@ const getAll = model => (req, res) => {
         .catch(error => res.status(500).json(error))
 };
 
-const getByUser = model => (req, res, userId) => {
+const getByUser = model => (req, res, next, userId1) => {
     return model.findAll({
         where: {
-            user_id: userId
+            user_id: userId1
         }
     })
         .then(entities => res.status(200).json(entities))

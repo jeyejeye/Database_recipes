@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet/less" type="text/css" href="/less/main.less" />
+    <script src="/js/less.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+    <!-- Header -->
+    <div class="header">
+        <div class="row">
+            <div class="container">
+                <div class="toolbar">
+                    <div class="toolbar__logo">
+                        <a href="#">Homework Recipes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <!-- Main  -->
+    <div class="main">
+        <div class="row">
+            <div class="container">
+                <!-- center section -->
+
+                <div class="recipesList" id="recipesList">
+                    <button class="button btn-grad" id="btnAddRecipe">Add New Recipe</button>
+                    <H2><i class="fa fa-star" aria-hidden="true"></i> My Recipes <i class="fa fa-star"
+                                                                                    aria-hidden="true"></i></H2>
+                    <div class="recipesList__Form" id="recipesListForm">
+                        <h4>Recipe title:</h4>
+                        <input type="text" id="recipeTitle" class="recipeTitle">
+                        <h4>Description:</h4>
+                        <textarea id="recipeDescribe" class="recipesList__Textarea"></textarea>
+                        <h4>Ingredients:</h4>
+                        <textarea id="recipeIngredients" class="recipesList__Textarea"></textarea>
+                        <button class="button button__Create" id="recipeCreate">Create</button>
+                        <div class="recipesList__Form_addSteps" id="formAddSteps">
+                            <button class="button button__Add" id="btnAddStep">Add step</button>
+                            <h4>Step 1:</h4>
+                            <textarea id="recipeStep1" class="recipesList__Textarea"></textarea>
+                            <!-- <h4>Step 2:</h4>
+                            <textarea id="recipeStep2" class="recipesList__Textarea"></textarea>
+                            <h4>Step 2:</h4>
+                            <textarea id="recipeStep3" class="recipesList__Textarea"></textarea> -->
+                        </div>
+                    </div>
+                    <div class="recipesList__Recipes" id="allRecipes">
+                        <!-- <div class="recipesList__title" data-title ='recipeId'>Title
+                            <div class="recipesList__Section" id="recipeId">
+                                    <h4>Description:</h4>
+                                     sasd
+                                    <h4>Ingredients:</h4>
+                                    asdasd
+                                    <h4>Step 1:</h4>
+                                    asds
+                                    <h4>Step 2:</h4>
+                                    adda
+                                    <h4>Step 2:</h4>
+                                    adad
+                                </div>
+                    </div> -->
+                    </div>
+                </div>
+                <!-- center section -->
+            </div>
+        </div>
+    </div>
+    <!-- Main  -->
+    <!-- footer -->
+    <div class="footer">
+        <div class="row">
+            <div class="container">
+                2019 :: Homework User's Database
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+</div>
+<!-- wrapper -->
+<script src="js/index.js"></script>
+
+</body>
+
+</html>

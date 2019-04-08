@@ -1,0 +1,197 @@
+@import "vars";
+@import "mixins";
+@import "components/base";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+.centred {
+    text-align: center;
+
+}
+
+.header {
+    flex: 0 0 auto;
+    padding: 0.5em 0;
+}
+.toolbar {
+   .toolbar__logo {
+    color: @white;
+    border-radius: 0.5em;
+    text-align: center;
+
+
+        a { 
+            display: block;
+            margin: 0 auto;
+            font-size: 50px;
+            padding: 0.5em;
+            text-decoration: none;
+            font-weight: 700;
+            color: @green;
+            font-family: 'Dancing Script', cursive;
+    }    
+   }
+}
+
+.main {
+    flex: 1 0 auto;
+    h2{
+        font-weight: 700;
+        color: @green;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .recipesList {
+      padding: 1em;
+      background: rgba(255,255,255,0.9);
+      .border;
+    }
+    .button {
+      float: right;     
+    }
+    .recipesList__title{
+      display: block;
+      margin-top: 10px;
+      padding: 1em;
+      font-size: 1.2em;
+      .border;
+    }
+    .recipesList__title:hover{
+      border: 1px solid #949832;
+    }
+}
+
+.button {
+    padding: 1em;
+    cursor: pointer;
+    outline: 0;
+    color: @white;
+    .border;
+    transition: 0.5s;
+    background-size: 150% auto;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 450px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.9);
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    padding: 1em;
+  }
+  .login__form h2 {
+    padding: 0.2em;
+  }
+  .login__form label {
+    padding-top: 0.2em;
+    font-weight: 700;
+  }
+  .login__form a {
+    padding-top: 0.2em;
+    font-weight: 700;
+    color: #333333;
+  }
+  .login__form a:hover {
+    color: #574494;
+  }
+
+  .login__form input[type='text'] {
+    margin: 0.2em;
+    padding: 1em;
+    outline: 0;
+    .border;
+  }
+
+  .login__form input[type='password'] {
+    margin: 0.2em;
+    padding: 1em;
+    outline: 0;
+    .border;
+  }
+  
+  .cancel__button {
+    background-color: #e60039;
+  }
+  .cancel__button:hover {
+    background-color: #C1002A;
+  }
+  .message {
+    color: red;
+    font-size: 0.8em;
+    display: none;
+  }
+
+
+  .recipesList__Form{
+    display: none;
+    flex-direction: column;
+    background: #EEDAD0;
+    padding: 1em;
+    .recipeTitle {
+      .border;
+      padding: 0.5em;
+    }
+    .recipesList__Textarea {
+      min-height: 5em;
+      .border;
+    }
+    .button{
+      margin-top: 0.5em;
+    }
+    .button__Create {
+      background: #EF659F;
+    }
+    .button__Create:hover {
+      background: rgb(204, 62, 121);
+    }
+    .button__Add {
+      background: #EEC8A3;
+      color: @white;
+    }
+    .button__Add:hover {
+      background: rgb(235, 156, 76);
+      
+    }
+  }
+
+ .recipesList__Form_addSteps {
+    display: none;
+    flex-direction: column;
+  }
+
+  
+.recipesList__Section {
+  .border;
+  padding: 1em;
+  margin-top: 0.5em;
+  display: none;
+}
+.recipesList_row {
+  display: flex;
+  flex-direction: column;
+}
+  
+  .footer {
+    flex: 0 0 auto;   
+    
+  }
+
